@@ -1,0 +1,48 @@
+﻿@page
+@model Affinity_Affairs.Pages.Admin.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2 class="my-3 mx-3">Edit</h2>
+<hr />
+<div class="d-flex justify-content-center">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="EventModel.Id" />
+            <div class="form-group my-3">
+                <label asp-for="EventModel.Name" class="control-label"></label>
+                <input asp-for="EventModel.Name" class="form-control" />
+                <span asp-validation-for="EventModel.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group my-3">
+                <label asp-for="EventModel.Location" class="control-label"></label>
+                <input asp-for="EventModel.Location" class="form-control" />
+                <span asp-validation-for="EventModel.Location" class="text-danger"></span>
+            </div>
+            <div class="form-group my-3">
+                <label asp-for="EventModel.Description" class="control-label"></label>
+                <input asp-for="EventModel.Description" class="form-control" />
+                <span asp-validation-for="EventModel.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group my-3">
+                <label asp-for="EventModel.Date" class="control-label"></label>
+                <input asp-for="EventModel.Date" class="form-control" />
+                <span asp-validation-for="EventModel.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group my-3">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="my-3 mx-3">
+    <a class="btn btn-outline-success" asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,110 @@
+﻿body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ecf0f1;
+    color: #333;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+nav {
+    background-color: #2c3e50;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    /* Updated to position at the top right */
+    align-items: center;
+    padding: 1em;
+}
+
+    nav a {
+        color: #ecf0f1;
+        text-decoration: none;
+        font-size: 1.2em;
+        transition: color 0.3s ease;
+        margin: 0 15px;
+    }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+@media screen and (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        /* Adjusted alignment for smaller screens */
+    }
+
+        nav a {
+            margin: 10px 0;
+        }
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #b3dcf7;
+    color: #1d1c1c;
+    padding: 1px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    flex-grow:1;
+}
+
+#logo {
+    max-width: 100px;
+    height: auto;
+    margin-right: 1em;
+}
+
+.login-container {
+    margin-right: 1em;
+}
+.LoginPartialNav {
+    text-align: right;
+    color: #1d1c1c;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+    margin: 0 15px;
+}
+
+    .LoginPartialNav:hover {
+        color: #3498db;
+    }
+h1 {
+    margin: 0 auto; /* Add this line to center the h1 */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#book-now-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #12a8f3;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+    #book-now-btn:hover {
+        background-color: #2980b9;
+    }

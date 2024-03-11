@@ -1,0 +1,40 @@
+﻿@page "/Events"
+
+@model EventsPageModel;
+
+@{
+    ViewData["Title"] = "Events";
+}
+<div id="hero">
+    <h1>All Events</h1>
+    <p>Explore and discover exciting events happening near you.</p>
+</div>
+
+<div id="events-container">
+    @if (Model.Events != null)
+    {
+        @foreach (var item in Model.Events)
+        {
+            <a asp-page="/EventDetail" class="event">
+                <img src="data:image/png;base64,@Convert.ToBase64String(item.Image.Data)" alt="Event 1 Image">
+                <h5>@item.Name</h5>
+                <p>Location: @item.Location</p>
+                <p class="event-date">Date: @item.Date.ToString("dd:MM:yyyy")</p>
+                @{
+                    if(User.IsInRole("Admin"))
+                    {
+                        <form asp-page-handler="Delete" asp-route-id="@item.Id" method="post">
+                            <button type="submit" class="btn btn-sm btn-danger">
+                                Delete
+                            </button>
+                        </form>
+                    }
+                }
+            </a>
+        }
+    }
+    else
+    {
+        <p>There are no events to display.</p>
+    }
+</div>

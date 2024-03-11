@@ -1,0 +1,5 @@
+1)Unzip and launch solution through Affinity Affairs.sln file.
+2)Add connection string in appsettings.
+2)Open package manager console and run this command 'Update-Database'
+3)Launch and register an account (default role assgined is 'User')
+5)To assign admin role , open the 'AspNetUserRole' table in SSMS and add userId and roleId(admin)

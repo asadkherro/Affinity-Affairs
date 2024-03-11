@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="~/css/MainStyleSheet.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/EventStyleSheet.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/IndexStyleSheet.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/EventDetailStyleSheet.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/ContactUsStyleSheet.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/BookEventStyleSheet.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img id="logo" src="~/img/logo.png" alt="Your Logo">
+            <h1>Affinity Affairs</h1>
+        </div>
+        <div class="login-container">
+            <partial name="_LoginPartial" />
+        </div>
+    </header>
+
+
+    <nav>
+        <a asp-page="/Index">Home</a>
+        <a asp-page="/Events">Events</a>
+        <a asp-page="/EventDetail">Event Details</a>
+        <a asp-page="ContactUs">Contact</a>
+        <partial name="_AdminDashboardLink" />
+        <a asp-page="/BookEvent" id="book-now-btn">Book Now</a>
+    </nav>
+    <div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer text-center bg-dark mt-auto">
+        &copy; 2023 Affinity Affairs. All rights reserved.
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

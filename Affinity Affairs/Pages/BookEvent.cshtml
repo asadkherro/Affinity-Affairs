@@ -1,0 +1,37 @@
+﻿@page "/BookEvent"
+@using Models.Enumeration
+@model Affinity_Affairs.Pages.BookEventPageModel
+@{
+    ViewData["Title"] = "Book an Event";
+}
+
+<div id="book-now-container">
+    <h2>Book Your Event Now</h2>
+    <p>Fill in the form below to book your spot for the selected event.</p>
+
+    <div id="book-now-form">
+        <form method="post">
+            <label for="event">Select Event:</label>
+            <select asp-for="BookEvent.Category" class="form-control">
+                @foreach (var category in (EventCategory[])Enum.GetValues(typeof(EventCategory)))
+                {
+                    <option value="@category">@category</option>
+                }
+            </select>
+
+            <label asp-for="BookEvent.Name">Your Name:</label>
+            <input type="text" id="name" asp-for="BookEvent.Name" required>
+
+            <label asp-for="BookEvent.Email">Your Email:</label>
+            <input type="email" id="email" asp-for="BookEvent.Email"required>
+
+            <label asp-for="BookEvent.Phone">Your Phone:</label>
+            <input type="tel" id="phone" asp-for="BookEvent.Phone"required>
+
+            <label asp-for="BookEvent.Message">Additional Message:</label>
+            <textarea id="message" asp-for="BookEvent.Message" rows="4"></textarea>
+
+            <button type="submit">Book Now</button>
+        </form>
+    </div>
+</div>

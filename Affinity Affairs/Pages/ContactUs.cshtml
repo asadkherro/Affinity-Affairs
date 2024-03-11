@@ -1,0 +1,55 @@
+﻿@page "/ContactUs"
+@using Affinity_Affairs.Data
+@using Microsoft.AspNetCore.Identity
+@model Affinity_Affairs.Pages.ContactUsPageModel
+@inject UserManager<ApplicationUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+@{
+    ViewData["Title"] = "Contact Us";
+}
+
+
+<div id="contact-container">
+    <h2>Get in Touch</h2>
+    <p>If you have any questions or inquiries, feel free to contact us using the form below.</p>
+
+    @{
+        if(SignInManager.IsSignedIn(User))
+        {
+            var user = UserManager.GetUserAsync(User).Result;
+            <div id="contact-form">
+                <form method="post">
+                    <label asp-for="ContactUs.Name">Your Name:</label>
+                    <input asp-for="ContactUs.Name" type="text" id="name" autocomplete="@user.FirstName+@user.LastName">
+
+                    <label asp-for="ContactUs.Email">Your Email:</label>
+                    <input type="email" id="email" asp-for="ContactUs.Email" autocomplete="@user.Email">
+
+                    <label asp-for="ContactUs.Message">Your Message:</label>
+                    <textarea id="message" asp-for="ContactUs.Message" rows="4" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        }
+        else
+        {
+            <div id="contact-form">
+                <form method="post">
+                    <label asp-for="ContactUs.Name">Your Name:</label>
+                    <input asp-for="ContactUs.Name" type="text" id="name" required>
+
+                    <label asp-for="ContactUs.Email">Your Email:</label>
+                    <input type="email" id="email" asp-for="ContactUs.Email" required>
+
+                    <label asp-for="ContactUs.Message">Your Message:</label>
+                    <textarea id="message" asp-for="ContactUs.Message" rows="4" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        }
+    }
+
+    
+</div>

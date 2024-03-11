@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Affinity_Affairs.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    if(User.IsInRole("Admin"))
+    {
+        <a class="btn btn-secondary" asp-page="/Admin/Index">Dashboard</a>
+    }
+    else
+    {
+        <a asp-page="/MyEvents">My Events</a>
+    }
+}

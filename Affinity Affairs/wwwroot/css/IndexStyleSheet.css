@@ -1,0 +1,125 @@
+﻿#content {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+h2 {
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #fafafa;
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+    img:hover {
+        transform: scale(1.1);
+    }
+
+#featured-events {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.event {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+    .event:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+#team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.team-member {
+    flex: 1;
+    max-width: 300px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #91918d;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(85, 82, 82, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+    .team-member:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+#contact-form {
+    margin-top: 30px;
+}
+
+    #contact-form input,
+    #contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    #contact-form button {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        #contact-form button:hover {
+            background-color: #2980b9;
+        }
+
+#additional-content {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.additional-section {
+    flex: 1;
+    max-width: 48%;
+    margin-bottom: 20px;
+}
+
+#hero {
+    position: relative;
+    height: 400px;
+    background: url('/Img/e1.jpg') center/cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 1;
+}
+
+
